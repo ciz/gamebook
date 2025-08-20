@@ -86,7 +86,6 @@ impl Statistika {
 struct Gamebook {
     graf_kapitol: Vec<Kapitola>,
     nazev: String,
-    lang: String,
 }
 
 impl Gamebook {
@@ -96,14 +95,12 @@ impl Gamebook {
             panic!("Chybí soubor ke zpracování.")
         }
         let nazev = &args[1];
-        let lang = "cz";
         let kapitoly = Self::nacti_kapitoly_ze_souboru(nazev);
         let graf_kapitol = Self::vytvor_graf(&kapitoly);
 
         Self {
             graf_kapitol: graf_kapitol,
             nazev: nazev.to_string(),
-            lang: lang,
         }
     }
     
